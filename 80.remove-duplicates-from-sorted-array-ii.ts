@@ -7,19 +7,16 @@
 
 // @lc code=start
 function removeDuplicates(nums: number[]): number {
-    let i = 0
-    for (const item of nums) {
-       
-        if(i <=1 || nums[i-2] !== item){
-            nums[i] = item
-            i++;
-        }
-    } 
-    return i
+  let i = 0
+  for (const item of nums) {
+    if (i <= 1 || nums[i - 2] !== item) {
+      nums[i] = item
+      i++
+    }
+  }
+  return i
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -31,4 +28,3 @@ function removeDuplicates(nums: number[]): number {
 // @lcpr case=end
 
  */
-

@@ -5,38 +5,35 @@
  * [3238] Find the Number of Winning Players
  */
 
-
 // @lcpr-template-start
 
 // @lcpr-template-end
 // @lc code=start
 function winningPlayerCount(n: number, pick: number[][]): number {
-    const players = new Set();
+  const players = new Set()
 
-    const map = new Map<number, Map<number, number>>();
+  const map = new Map<number, Map<number, number>>()
 
-    for (const [player, color] of pick) {
-        if (players.has(player)) {
-            continue;
-        }
-
-        if (!map.has(player)) {
-            map.set(player, new Map<number, number>());
-        }
-
-        const colorsMap = map.get(player);
-        const colorCount = (colorsMap!.get(color) || 0) + 1;
-        if (colorCount > player) {
-            players.add(player);
-        }
-        colorsMap!.set(color, colorCount);
+  for (const [player, color] of pick) {
+    if (players.has(player)) {
+      continue
     }
 
-    return players.size;
+    if (!map.has(player)) {
+      map.set(player, new Map<number, number>())
+    }
+
+    const colorsMap = map.get(player)
+    const colorCount = (colorsMap!.get(color) || 0) + 1
+    if (colorCount > player) {
+      players.add(player)
+    }
+    colorsMap!.set(color, colorCount)
+  }
+
+  return players.size
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -52,4 +49,3 @@ function winningPlayerCount(n: number, pick: number[][]): number {
 // @lcpr case=end
 
  */
-

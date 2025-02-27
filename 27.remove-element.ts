@@ -7,18 +7,16 @@
 
 // @lc code=start
 function removeElement(nums: number[], val: number): number {
-    let index = 0
-    for (let i = 0; i < nums.length; i++) {
-        const element = nums[i];
-        if (element !== val) {
-            nums[index++] = element
-        }
+  let index = 0
+  for (let i = 0; i < nums.length; i++) {
+    const element = nums[i]
+    if (element !== val) {
+      nums[index++] = element
     }
-    return index
+  }
+  return index
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -30,4 +28,3 @@ function removeElement(nums: number[], val: number): number {
 // @lcpr case=end
 
  */
-

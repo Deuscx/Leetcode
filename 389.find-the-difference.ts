@@ -7,34 +7,34 @@
 
 // @lc code=start
 function findTheDifference(s: string, t: string): string {
-    const tMap = t.split('').reduce((acc, cur) =>{
-        if(!acc[cur]){
-            acc[cur] = 1
-        }else{
-            acc[cur] += 1
-        }
-        return acc
-    }, {})
-
-    const sMap = s.split('').reduce((acc, cur) =>{
-        if(!acc[cur]){
-            acc[cur] = 1
-        }else{
-            acc[cur] += 1
-        }
-        
-        return acc
-    }, {})
-
-    for (const char of Object.keys(tMap)) {
-       if(tMap[char] === sMap[char])  continue;
-       return char
+  const tMap = t.split('').reduce((acc, cur) => {
+    if (!acc[cur]) {
+      acc[cur] = 1
     }
-    
+    else {
+      acc[cur] += 1
+    }
+    return acc
+  }, {})
+
+  const sMap = s.split('').reduce((acc, cur) => {
+    if (!acc[cur]) {
+      acc[cur] = 1
+    }
+    else {
+      acc[cur] += 1
+    }
+
+    return acc
+  }, {})
+
+  for (const char of Object.keys(tMap)) {
+    if (tMap[char] === sMap[char])
+      continue
+    return char
+  }
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -46,4 +46,3 @@ function findTheDifference(s: string, t: string): string {
 // @lcpr case=end
 
  */
-

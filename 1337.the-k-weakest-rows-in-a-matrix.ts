@@ -7,20 +7,18 @@
 
 // @lc code=start
 function kWeakestRows(mat: number[][], k: number): number[] {
-    const row_sum = []
-    mat.forEach((value, index)=>{
-        row_sum.push([sum(value), index])
-    })    
-    row_sum.sort((a,b)=> a[0] - b[0])
-    return row_sum.map((row)=> row[1]).slice(0,k)
+  const row_sum = []
+  mat.forEach((value, index) => {
+    row_sum.push([sum(value), index])
+  })
+  row_sum.sort((a, b) => a[0] - b[0])
+  return row_sum.map(row => row[1]).slice(0, k)
 };
 
-function sum(arr){
-    return arr.reduce((a,b)=> a+b,0)
+function sum(arr) {
+  return arr.reduce((a, b) => a + b, 0)
 }
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -32,4 +30,3 @@ function sum(arr){
 // @lcpr case=end
 
  */
-

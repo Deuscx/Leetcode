@@ -7,13 +7,10 @@
 
 // @lc code=start
 function majorityElement(nums: number[]): number {
-    const sorted = nums.sort((a,b) => a - b) 
-    return sorted[Math.floor(nums.length / 2)]
-
+  const sorted = nums.sort((a, b) => a - b)
+  return sorted[Math.floor(nums.length / 2)]
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -25,4 +22,3 @@ function majorityElement(nums: number[]): number {
 // @lcpr case=end
 
  */
-

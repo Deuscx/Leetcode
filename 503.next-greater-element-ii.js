@@ -10,26 +10,23 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var nextGreaterElements = function(nums) {
-   let n = nums.length;
-   let res = new Array(n).fill(-1) 
-    
-   // 递减栈
-   let indexs = [] 
-    
-   for (let i = 0; i < n * 2; i++) {
-    
-        while (indexs.length && nums[i % n] > nums[indexs[indexs.length - 1]]) {
-           const index = indexs.pop() 
-           res[index] = nums[i % n]
-        }
-        indexs.push(i % n)
-   }
-   return res
-};
+function nextGreaterElements(nums) {
+  const n = nums.length
+  const res = Array.from({ length: n }, () => -1)
+
+  // 递减栈
+  const indexs = []
+
+  for (let i = 0; i < n * 2; i++) {
+    while (indexs.length && nums[i % n] > nums[indexs[indexs.length - 1]]) {
+      const index = indexs.pop()
+      res[index] = nums[i % n]
+    }
+    indexs.push(i % n)
+  }
+  return res
+}
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -41,4 +38,3 @@ var nextGreaterElements = function(nums) {
 // @lcpr case=end
 
  */
-

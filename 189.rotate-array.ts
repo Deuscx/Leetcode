@@ -10,16 +10,14 @@
  Do not return anything, modify nums in-place instead.
  */
 function rotate(nums: number[], k: number): void {
-    let step = k % nums.length
-    while (step > 0) {
-        const v = nums.pop() as number
-        nums.unshift(v)
-        step--;
-    }
+  let step = k % nums.length
+  while (step > 0) {
+    const v = nums.pop() as number
+    nums.unshift(v)
+    step--
+  }
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -31,4 +29,3 @@ function rotate(nums: number[], k: number): void {
 // @lcpr case=end
 
  */
-

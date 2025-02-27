@@ -7,32 +7,29 @@
 
 // @lc code=start
 function minOperations(nums: number[], x: number): number {
-    let target = nums.reduce((a, b) => a + b, 0) - x;
-    if (target < 0) {
-        return -1;
-    }
-    let sum = 0;
-    let left = 0
-    let maxLen = Number.MIN_SAFE_INTEGER;
+  const target = nums.reduce((a, b) => a + b, 0) - x
+  if (target < 0) {
+    return -1
+  }
+  let sum = 0
+  let left = 0
+  let maxLen = Number.MIN_SAFE_INTEGER
 
-    const len = nums.length;
-    for (let right = 0; right < len; right++) {
-        sum += nums[right]
-        while (sum > target) {
-            sum -= nums[left++];
-        }
-
-        if (sum === target) {
-            maxLen = Math.max(maxLen, right - left + 1)
-        }
-
+  const len = nums.length
+  for (let right = 0; right < len; right++) {
+    sum += nums[right]
+    while (sum > target) {
+      sum -= nums[left++]
     }
 
-    return maxLen === Number.MIN_SAFE_INTEGER ? -1 : len - maxLen
+    if (sum === target) {
+      maxLen = Math.max(maxLen, right - left + 1)
+    }
+  }
+
+  return maxLen === Number.MIN_SAFE_INTEGER ? -1 : len - maxLen
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -48,4 +45,3 @@ function minOperations(nums: number[], x: number): number {
 // @lcpr case=end
 
  */
-

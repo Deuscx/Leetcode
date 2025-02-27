@@ -7,32 +7,32 @@
 
 // @lc code=start
 function removeDuplicateLetters(s: string): string {
-    const mp = {}
-    
-    for (const char of s) {
-        if(mp[char]){
-            mp[char] += 1
-        } else {
-            mp[char] = 1
-        }
-    }
+  const mp = {}
 
-    let ans: string[]= []
-    for (const currentChar of s) {
-        mp[currentChar] -= 1;
-        if(ans.includes(currentChar)) continue;
-
-        while(ans.length && ans[ans.length - 1] > currentChar && mp[ans[ans.length - 1]]){
-           ans.pop()            
-        }
-        ans.push(currentChar)
+  for (const char of s) {
+    if (mp[char]) {
+      mp[char] += 1
     }
-    
-    return ans.join('')
+    else {
+      mp[char] = 1
+    }
+  }
+
+  const ans: string[] = []
+  for (const currentChar of s) {
+    mp[currentChar] -= 1
+    if (ans.includes(currentChar))
+      continue
+
+    while (ans.length && ans[ans.length - 1] > currentChar && mp[ans[ans.length - 1]]) {
+      ans.pop()
+    }
+    ans.push(currentChar)
+  }
+
+  return ans.join('')
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -44,4 +44,3 @@ function removeDuplicateLetters(s: string): string {
 // @lcpr case=end
 
  */
-

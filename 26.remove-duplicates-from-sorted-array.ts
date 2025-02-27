@@ -7,22 +7,20 @@
 
 // @lc code=start
 function removeDuplicates(nums: number[]): number {
-    let i = 0;
-    let readed = new Set();
-    for (let index = 0; index < nums.length; index++) {
-        const element = nums[index];
-        if (readed.has(element)) {
-            continue
-        }
-
-        readed.add(element)
-        nums[i++] = element
+  let i = 0
+  const readed = new Set()
+  for (let index = 0; index < nums.length; index++) {
+    const element = nums[index]
+    if (readed.has(element)) {
+      continue
     }
-    return i
+
+    readed.add(element)
+    nums[i++] = element
+  }
+  return i
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -34,4 +32,3 @@ function removeDuplicates(nums: number[]): number {
 // @lcpr case=end
 
  */
-

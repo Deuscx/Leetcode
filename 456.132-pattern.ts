@@ -7,28 +7,26 @@
 
 // @lc code=start
 function find132pattern(nums: number[]): boolean {
-    let stack: number[] = []
-    let num2: number = Number.MIN_SAFE_INTEGER;
+  const stack: number[] = []
+  let num2: number = Number.MIN_SAFE_INTEGER
 
-    for (let i = nums.length - 1; i >= 0; i--) {
-        const element = nums[i];
+  for (let i = nums.length - 1; i >= 0; i--) {
+    const element = nums[i]
 
-        if (element < num2) {
-            return true
-        }
-
-        while (stack.length && element > stack[stack.length - 1]) {
-            num2 = stack.pop()
-        }
-
-        stack.push(element)
+    if (element < num2) {
+      return true
     }
 
-    return false
+    while (stack.length && element > stack[stack.length - 1]) {
+      num2 = stack.pop()
+    }
+
+    stack.push(element)
+  }
+
+  return false
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -44,4 +42,3 @@ function find132pattern(nums: number[]): boolean {
 // @lcpr case=end
 
  */
-

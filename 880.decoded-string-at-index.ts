@@ -8,25 +8,25 @@
 // @lc code=start
 
 function isNumber(char: string) {
-    return !isNaN(Number(char))
+  return !Number.isNaN(Number(char))
 }
 function decodeAtIndex(s: string, k: number): string {
-    let length = 0;
-    for (const char of s) {
-        let pre = length
-        if (isNumber(char)) {
-            length *= Number(char)
-            if (length >= k)
-                return decodeAtIndex(s, (k - 1) % pre + 1) 
-        }else{
-            length += 1
-            if(length === k) return char
-        }
+  let length = 0
+  for (const char of s) {
+    const pre = length
+    if (isNumber(char)) {
+      length *= Number(char)
+      if (length >= k)
+        return decodeAtIndex(s, (k - 1) % pre + 1)
     }
+    else {
+      length += 1
+      if (length === k)
+        return char
+    }
+  }
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -42,4 +42,3 @@ function decodeAtIndex(s: string, k: number): string {
 // @lcpr case=end
 
  */
-
