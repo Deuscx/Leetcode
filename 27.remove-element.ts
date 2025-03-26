@@ -5,16 +5,18 @@
  * [27] Remove Element
  */
 
+// @lcpr-template-start
+
+// @lcpr-template-end
 // @lc code=start
 function removeElement(nums: number[], val: number): number {
-  let index = 0
-  for (let i = 0; i < nums.length; i++) {
-    const element = nums[i]
-    if (element !== val) {
-      nums[index++] = element
-    }
+  let i = 0
+  for (const num of nums) {
+    if (num !== val)
+      nums[i++] = num
   }
-  return index
+
+  return i
 };
 // @lc code=end
 
