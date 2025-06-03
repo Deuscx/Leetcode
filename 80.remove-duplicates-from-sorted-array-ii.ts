@@ -5,16 +5,21 @@
  * [80] Remove Duplicates from Sorted Array II
  */
 
+// @lcpr-template-start
+
+// @lcpr-template-end
 // @lc code=start
 function removeDuplicates(nums: number[]): number {
-  let i = 0
-  for (const item of nums) {
-    if (i <= 1 || nums[i - 2] !== item) {
-      nums[i] = item
-      i++
+  let current = 2
+  // 从第三个元素开始遍历
+  for (let i = 2; i < nums.length; i++) {
+    // 如果当前元素与前两个元素不同，则将当前元素添加到栈中
+    if (nums[i] !== nums[current - 2]) {
+      nums[current] = nums[i]
+      current++
     }
   }
-  return i
+  return current
 };
 // @lc code=end
 
